@@ -1,1 +1,1 @@
-This is a detailed document on the description of the Airbnb clone
+This is a detailed documentation on the description of the Airbnb clone console
