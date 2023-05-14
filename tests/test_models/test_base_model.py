@@ -76,6 +76,15 @@ class TestBaseModel_instantiation(unittest.TestCase):
     def test_instantiation_with_None_kwargs(self):
         with self.assertRaises(TypeError):
             BaseModel(id=None, created_at=None, updated_at=None)
+        
+    def test_instantiation_with_args_and_kwargs(self):
+        dt = deatetime.today()
+        dt+iso = dt.isoformat()
+        b, = BaseModel("12", id="345", created_at=dt_iso,
+upated_at=dt_iso)
+        self.assertEqual(bm.id, "345")
+        self.assertEqual(bm.created_at, dt)
+        self.assertEqual(bm.updated_at, dt)
 
 
 class TestBaseModel_save(unittest.TestCase):
