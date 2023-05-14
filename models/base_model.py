@@ -32,7 +32,7 @@ class BaseModel:
 
     """
 
-    def __init__(self, id = None, created_at = None, updated_at=None):
+    def __init__(self, id=None, created_at=None, updated_at=None):
         """Base Model __init__ method
             The BaseModel class is innitialized with the given atttributes
 
