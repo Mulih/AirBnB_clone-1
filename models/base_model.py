@@ -32,14 +32,22 @@ class BaseModel:
 
     """
 
-    def __init__(self, id=None, created_at=None, updated_at=None):
+    def __init__(self, *args, **kwargs):
         """Base Model __init__ method
             The BaseModel class is innitialized with the given atttributes
 
         """
-        self.id = str(uuid4())
-        self.created_at = datetime.now()
-        self.updated_at = self.created_at
+        if kwargs:
+            for arg, val in kwargs.items():
+                if arg in ('created_at', 'updated_at'):
+                    val = datetime.strptime(val, '%Y-%m-%dT%H:%M:%S.%f')
+
+                if arg != '__class__':
+                    setattr(self, arg, val)
+        else:
+            self.id = str(uuid4())
+            self.created_at = datetime.now()
+            self.updated_at = self.created_at
 
     def __str__(self):
         """Returns the string representation of the instance of the class
