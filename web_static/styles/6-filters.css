@@ -53,6 +53,47 @@ h4 {
     margin: 10px;
 }
 
-ul {
+.filters .locations:hover,
+.filters .amenities:hover {
+    background-color: #fafafa;
+}
+
+.popover {
+    background-color: #fafafa;
+    padding: 10px;
+    border: 1px solid #DDDDDD;
+    border-radius: 4px;
+    display: none;
+    position: absolute;
+    width: 100%;
+}
+
+.filters .locations:hover .popover,
+.filters .amenities:hover .popover {
+    display: block;
+    position: absolute;
+    border-radius: 4px;
+}
+
+.filters .locations ul {
+    padding: 6px 0 6px 0;
+}
+
+.filters .locations li {
+    margin: 0 auto 6px 3em;
+}
+
+.filters .amenities li {
+    margin: 12px auto 12px 30px;
+}
+
+.filters h2 {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 12px auto 0 30px;
+}
+
+.popover ul {
     list-style: none;
+    padding: 0;
 }
